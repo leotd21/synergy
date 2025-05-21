@@ -27,7 +27,7 @@ def render_distribution_comparison(original_df, synthetic_df, metadata):
         if props.get("sdtype") == "categorical"
         and 2 <= original_df[col].nunique() <= 50
         and not is_datetime(col)
-        and not is_id_like(col)
+        # and not is_id_like(col)
     ]
 
     # Filter numerical columns
@@ -36,7 +36,7 @@ def render_distribution_comparison(original_df, synthetic_df, metadata):
         if props.get("sdtype") == "numerical"
         and original_df[col].nunique() / total_rows < 0.9
         and not is_datetime(col)
-        and not is_id_like(col)
+        # and not is_id_like(col)
     ]
 
     # Log filtered columns
